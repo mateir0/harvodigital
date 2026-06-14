@@ -1,0 +1,226 @@
+---
+---
+<section class="contact-section" id="contact">
+  <div class="container grid-12 contact-container">
+    <!-- Left side info -->
+    <div class="contact-info reveal-on-scroll">
+      <h2 class="section-title">Let's Scale Your Business</h2>
+      <p class="contact-lead">
+        Have a project in mind or want to explore optimization opportunities? Get in touch to schedule a free 30-minute growth strategy session.
+      </p>
+      
+      <div class="contact-details">
+        <div class="detail-item">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-svg-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="detail-text">
+            <div class="detail-label">Email Us</div>
+            <a href="mailto:hello@harvo.digital" class="detail-value">hello@harvo.digital</a>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-svg-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="detail-text">
+            <div class="detail-label">Location</div>
+            <div class="detail-value">London, UK &amp; Remote</div>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-svg-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="detail-text">
+            <div class="detail-label">Business Hours</div>
+            <div class="detail-value">Mon — Fri, 9:00 AM — 6:00 PM GMT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right side form -->
+    <div class="contact-form-wrapper reveal-on-scroll">
+      <form class="contact-form" id="agency-contact-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Sarah Jenkins" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="sarah@company.com" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="business" class="form-label">Business Name</label>
+          <input type="text" id="business" name="business" class="form-input" placeholder="CloudScale Inc." required />
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">How can we help you scale?</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project goals, timelines, and current budget..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        <div class="form-status" id="form-status-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding-top: var(--space-y-section);
+    padding-bottom: var(--space-y-section);
+    background-color: var(--color-bg);
+  }
+
+  .contact-container {
+    align-items: center;
+  }
+
+  .contact-info {
+    grid-column: span 6;
+  }
+
+  .contact-lead {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .detail-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .detail-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+  }
+
+  .contact-svg-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .detail-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 2px;
+  }
+
+  .detail-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  a.detail-value:hover {
+    color: var(--color-primary);
+  }
+
+  .contact-form-wrapper {
+    grid-column: span 6;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 48px;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .form-status {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .form-status.success {
+    color: #10B981;
+  }
+
+  .form-status.error {
+    color: #EF4444;
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 1024px) {
+    .contact-info {
+      grid-column: span 5;
+    }
+    
+    .contact-form-wrapper {
+      grid-column: span 7;
+      padding: 36px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+    
+    .contact-info, .contact-form-wrapper {
+      width: 100%;
+    }
+    
+    .contact-form-wrapper {
+      padding: 32px;
+    }
+  }
+</style>
+
+<script>
+  const setupContactForm = () => {
+    const form = document.getElementById('agency-contact-form') as HTMLFormElement | null;
+    const statusMsg = document.getElementById('form-status-msg');
+
+    if (!form || !statusMsg) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Basic mock submission with client-grade visual feedback
+      statusMsg.textContent = "Sending message...";
+      statusMsg.className = "form-status";
+
+      setTimeout(() => {
+        statusMsg.textContent = "Thank you! We've received your details and will call you back within 2 hours.";
+        statusMsg.className = "form-status success";
+        form.reset();
+      }, 1200);
+    });
+  };
+
+  // Run on mount
+  document.addEventListener('DOMContentLoaded', setupContactForm);
+  document.addEventListener('astro:after-swap', setupContactForm);
+</script>

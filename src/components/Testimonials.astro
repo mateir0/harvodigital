@@ -1,0 +1,178 @@
+---
+const testimonials = [
+  {
+    name: "Sarah Jenkins",
+    role: "Director of Marketing",
+    company: "CloudScale Inc.",
+    review: "HARVO completely redesigned our visual language and application onboarding flow. We saw a 34% increase in sign-up conversions within the first month of deployment. Their communication and technical execution are second to none.",
+    rating: 5
+  },
+  {
+    name: "Marcus Thorne",
+    role: "Co-Founder",
+    company: "Velocti Brand Group",
+    review: "We worked with HARVO to scale our paid advertising campaigns on Meta and Google. They structured campaigns using data-driven funnels, reducing our customer acquisition cost (CAC) by 22% while increasing total conversion volume.",
+    rating: 5
+  },
+  {
+    name: "Elena Rostova",
+    role: "VP of Growth",
+    company: "Nexis Labs",
+    review: "Unlike other agencies that overpromise, HARVO focuses strictly on core performance metrics. Their custom SEO strategy has continuously driven high-intent organic leads to our pipeline, making them a core growth partner.",
+    rating: 5
+  }
+];
+---
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal-on-scroll">
+      <h2 class="section-title">Client Success</h2>
+      <p class="section-subtitle">Real feedback from high-growth brands that rely on HARVO to scale their digital operations.</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      {testimonials.map(item => (
+        <div class="testimonial-card reveal-on-scroll">
+          <!-- Star Rating -->
+          <div class="star-rating">
+            {Array.from({ length: item.rating }).map(() => (
+              <svg viewBox="0 0 24 24" fill="currentColor" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            ))}
+          </div>
+          
+          <p class="testimonial-text">"{item.review}"</p>
+          
+          <div class="testimonial-author">
+            <div class="author-info">
+              <div class="author-name">{item.name}</div>
+              <div class="author-role">{item.role}, <span class="author-company">{item.company}</span></div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding-top: var(--space-y-section);
+    padding-bottom: var(--space-y-section);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-header {
+    max-width: 600px;
+    margin-bottom: 64px;
+  }
+
+  .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .testimonial-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--duration-smooth) var(--transition-smooth), 
+                border-color var(--duration-smooth) var(--transition-smooth);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+  }
+
+  .star-rating {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    color: var(--color-primary); /* Minimal primary blue star styling */
+  }
+
+  .star-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-style: italic;
+    flex-grow: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+  }
+
+  .author-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+  }
+
+  .author-role {
+    font-size: 0.825rem;
+    color: var(--color-text-secondary);
+  }
+
+  .author-company {
+    color: var(--color-primary);
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    /* Hide third item on medium screens for symmetry */
+    .testimonial-card:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .testimonial-card:last-child {
+      display: flex;
+    }
+
+    .testimonial-card {
+      padding: 32px;
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+  }
+</style>
